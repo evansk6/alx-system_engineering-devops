@@ -1,2 +1,2 @@
 #!/bin/bash
-Cp -rwa ".html ../
+cp -rwa ".html ../"
