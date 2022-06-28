@@ -1,9 +1,2 @@
 #!/bin/bash 
-host    When possible, the hostname making the request. Uses the IP address if the hostname was unavailable.
-logname Unused, always -
-time    In seconds, since 1970
-method  HTTP method: GET, HEAD, or POST
-url Requested path
-response    HTTP response code
-bytes   Number of bytes in the reply
-
+awk -F'[ "]+' '$7 == "/" { ipcount[$1]++ } END { for (i in ipcount) {printf "%15s - %d\n", i, ipcount[i] } }' logfile.log
