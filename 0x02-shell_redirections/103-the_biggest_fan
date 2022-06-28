@@ -1,2 +1,2 @@
-#!/bin/bash 
-awk -F'[ "]+' '$7 == "/" { ipcount[$1]++ } END { for (i in ipcount) {printf "%15s - %d\n", i, ipcount[i] } }' logfile.log
+#!/bin/bash
+cut -f 8 log | uniq-c | sort -n
